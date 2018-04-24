@@ -3,10 +3,6 @@
 CWD="$( cd "$( dirname "$0"  )" && pwd  )"
 cd $CWD
 
-cd from_debian
-docker build -t lonord/dnsmasq:debian .
-cd ..
+docker build -t lonord/dnsmasq:debian -f from_debian.Dockerfile .
 
-cd from_node
-docker build -t lonord/dnsmasq:node .
-cd ..
+docker build -t lonord/dnsmasq:node -f from_node.Dockerfile .
